@@ -1,32 +1,23 @@
 import turtle
 
 class Polygon:
-    def __init__(self, num_sides, size):
+    def __init__(self, num_sides, size, orientation, color, border_size):
         self.num_sides = num_sides
         self.size = size
-        self.orientation = 0
+        self.orientation = orientation
         self.location = [0, 0]
-        self.color = (0, 0, 0)
-        self.border_size = 1
+        self.color = color
+        self.border_size = border_size
     
     def set_location(self, location):
         self.location = location
         turtle.penup()
         turtle.goto(self.location[0], self.location[1])
 
-    def set_orientation(self, orientation):
-        self.orientation = orientation
-        turtle.setheading(self.orientation)
-
-    def set_color(self, color):
-        self.color = color
-        turtle.color(self.color)
-    
-    def set_pensize(self, border_size):
-        self.border_size = border_size
-        turtle.pensize(self.border_size)
-
     def draw(self):
+        turtle.setheading(self.orientation)
+        turtle.color(self.color)
+        turtle.pensize(self.border_size)
         turtle.pendown()
         for _ in range(self.num_sides):
             turtle.forward(self.size)
@@ -34,8 +25,8 @@ class Polygon:
         turtle.penup()
 
 class EmbeddedPolygon(Polygon):
-    def __init__(self, num_sides, size, level):
-        Polygon.__init__(self, num_sides, size)
+    def __init__(self, num_sides, size, orientation, color, border_size, level):
+        Polygon.__init__(self, num_sides, size, orientation, color, border_size)
         self.level = level
         self.reduction_ratio = 0.618
 
