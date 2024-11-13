@@ -43,5 +43,5 @@ my_portfolio.insert_art([lambda: random.randint(5,5), lambda: random.randint(2, 
 my_portfolio.insert_art([lambda: random.randint(3,5), lambda: random.randint(2, 2)])
 my_portfolio.insert_art([lambda: random.randint(3,5), lambda: random.randint(0, 3)])
 
-art_id = int(input("Select art piece number: "))
+art_id = int(input("Select an art piece number: "))
 my_portfolio.run(art_id-1, 30)
