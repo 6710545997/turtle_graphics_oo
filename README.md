@@ -3,3 +3,5 @@
 - Fork, then, clone this repo
 - Read the instructions given in the course's Google Classroom and start coding
 - Once you are done, push your final code to your Github repo and modify this README to report on the work you have done
+
+#When I rum code I saw different shape of polygon show by each number
